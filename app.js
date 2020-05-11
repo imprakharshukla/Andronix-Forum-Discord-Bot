@@ -2,9 +2,6 @@ const axios = require('axios');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-
-console.log("Token  " + process.env.TOKEN)
-
 client.once('ready', () => {
     console.log('Ready!');
 });
@@ -15,6 +12,8 @@ client.on('message', message => {
     const prefix = '/';
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
+    console.log(`The bot was used by ${message.author}`)
+
     const args = message.content.slice(prefix.length).split(' ');
     const command = args.shift().toLowerCase();
 
@@ -47,7 +46,6 @@ client.on('message', message => {
 
             })
 
-            console.log(arrayToSend)
             message.channel.send({embed: createResponse(arrayToSend)});
 
 
