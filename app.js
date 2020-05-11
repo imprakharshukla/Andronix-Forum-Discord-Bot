@@ -18,6 +18,9 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     const searchParams = getSearchParams(message.content.slice(prefix.length).split(' '))
+    if (searchParams.length === 0 || !searchParams) {
+        return message.channel.send(`You didn't provide any search parameter, ${message.author}!`);
+    }
 
     if (command === 'search') {
         if (!args.length || searchParams.length === 0) {
@@ -30,6 +33,10 @@ client.on('message', message => {
             let topics = responseFromDiscourse.topics;
             let arrayToSend = [];
             let no = 0;
+
+            if (!topics) {
+                return message.channel.send(`We didn't found any topics related to ${searchParams}, ${message.author}!`);
+            }
 
             topics.forEach((element) => {
                 let title = element.title;
