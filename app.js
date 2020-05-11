@@ -3,6 +3,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 
+console.log("Token  " + process.env.TOKEN)
+
 client.once('ready', () => {
     console.log('Ready!');
 });
@@ -30,7 +32,7 @@ client.on('message', message => {
             let arrayToSend = [];
             let no = 0;
 
-            topics.forEach((element, index) => {
+            topics.forEach((element) => {
                 let title = element.title;
                 let id = element.id;
 
