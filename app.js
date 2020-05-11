@@ -82,7 +82,7 @@ function createResponse(fieldArray) {
         fields: fieldArray,
         timestamp: new Date(),
         footer: {
-            text: `Made with love by the devs of Andronix. ⭐ me at git.andronix.app`,
+            text: `Made with ❤ by the developers of Andronix.`,
         },
     };
 }
