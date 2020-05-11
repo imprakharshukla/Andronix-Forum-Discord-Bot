@@ -47,7 +47,7 @@ client.on('message', message => {
                     no += 1;
                     arrayToSend.push({
                         name: `Topic ${no}`,
-                        value: `**${title}** \n https://https://forum.andronix.app/t/${id}`,
+                        value: `**${title}** \n https://forum.andronix.app/t/${id}`,
                     });
                 }
 
